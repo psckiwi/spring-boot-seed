@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: prod
+
+application:
+  property:
+    hello: prod_hello

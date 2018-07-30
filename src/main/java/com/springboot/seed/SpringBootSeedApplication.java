@@ -1,19 +1,44 @@
 package com.springboot.seed;
 
+import com.springboot.seed.config.AppConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.Environment;
 
+import javax.annotation.PostConstruct;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Arrays;
+import java.util.Collection;
 
 @SpringBootApplication
 public class SpringBootSeedApplication {
 
     private static final Logger log = LoggerFactory.getLogger(SpringBootSeedApplication.class);
 
+    @Autowired
+    private Environment env;
+
+    /**
+     * Initializes Application.
+     * <p>
+     * Spring profiles can be configured with a program arguments --spring.profiles.active=your-active-profile
+     * <p>
+     */
+    @PostConstruct
+    public void initApplication() {
+        Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
+        if (activeProfiles.contains(AppConstants.SPRING_PROFILE_DEVELOPMENT) && activeProfiles.contains(AppConstants.SPRING_PROFILE_PRODUCTION)) {
+            log.error("You have misconfigured your application! It should not run with both the 'dev' and 'prod' profiles at the same time.");
+        }
+        if (activeProfiles.contains(AppConstants.SPRING_PROFILE_TEST) && activeProfiles.contains(AppConstants.SPRING_PROFILE_PRODUCTION)) {
+            log.error("You have misconfigured your application! It should not run with both the 'test' and 'prod' profiles at the same time.");
+        }
+    }
+    
     public static void main(String[] args) throws UnknownHostException {
         SpringApplication app = new SpringApplication(SpringBootSeedApplication.class);
         Environment env = app.run(args).getEnvironment();
