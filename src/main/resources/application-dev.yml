@@ -2,6 +2,18 @@ spring:
   profiles:
     active: dev
 
+management:
+  server:
+    port: 8080
+  endpoints:
+    web:
+      base-path: /monitor
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
 application:
   property:
     hello: dev_hello

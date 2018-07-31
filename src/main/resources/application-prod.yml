@@ -2,6 +2,15 @@ spring:
   profiles:
     active: prod
 
+management:
+  server:
+    port: 8080
+  endpoints:
+    web:
+      base-path: /monitor
+      exposure:
+        include: health,info
+
 application:
   property:
     hello: prod_hello
