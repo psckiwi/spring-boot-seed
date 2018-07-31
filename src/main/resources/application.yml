@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: spring-boot-seed
+  banner:
+    charset: UTF-8
+    location: banner.txt
 
 application:
   property:
