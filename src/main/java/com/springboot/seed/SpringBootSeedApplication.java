@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
@@ -15,6 +16,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @SpringBootApplication
+@EnableCaching
 public class SpringBootSeedApplication {
 
     private static final Logger log = LoggerFactory.getLogger(SpringBootSeedApplication.class);
