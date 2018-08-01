@@ -1,4 +1,4 @@
-package com.springboot.seed.example.ehcache;
+package com.springboot.seed.sample.ehcache;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

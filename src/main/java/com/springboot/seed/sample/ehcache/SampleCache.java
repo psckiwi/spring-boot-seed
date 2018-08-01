@@ -1,4 +1,4 @@
-package com.springboot.seed.example.ehcache;
+package com.springboot.seed.sample.ehcache;
 
 import lombok.Getter;
 import lombok.Setter;
