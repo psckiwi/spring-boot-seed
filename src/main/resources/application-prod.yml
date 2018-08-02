@@ -1,16 +1,28 @@
+# ===================================================================
+# Spring Boot configuration for the "prod" profile.
+#
+# This configuration overrides the application.yml file.
+# ===================================================================
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+
 spring:
   profiles:
     active: prod
-
-management:
-  server:
-    port: 8080
-  endpoints:
-    web:
-      base-path: /monitor
-      exposure:
-        include: health,info
-
+# ===================================================================
+# Application specific properties
+#
+# Add your own application properties here
+# ===================================================================
 application:
   property:
     hello: prod_hello

@@ -1,19 +1,31 @@
-spring:
-  profiles:
-    active: dev
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+# ===================================================================
+server:
+  port: 8080
 
 management:
-  server:
-    port: 8080
   endpoints:
     web:
-      base-path: /monitor
       exposure:
         include: "*"
   endpoint:
     health:
       show-details: always
 
+spring:
+  profiles:
+    active: dev
+  output:
+    ansi:
+      enabled: always
+# ===================================================================
+# Application specific properties
+#
+# Add your own application properties here
+# ===================================================================
 application:
   property:
     hello: dev_hello
