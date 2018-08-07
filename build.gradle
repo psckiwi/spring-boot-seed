@@ -31,6 +31,7 @@ dependencies {
     compile('net.sf.ehcache:ehcache')
     compile('io.springfox:springfox-swagger2:2.9.2')
     compile('io.springfox:springfox-swagger-ui:2.9.2')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 
     compileOnly('org.projectlombok:lombok')
 

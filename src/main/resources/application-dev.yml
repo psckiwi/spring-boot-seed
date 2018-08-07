@@ -21,6 +21,14 @@ spring:
   output:
     ansi:
       enabled: always
+  messages:
+    cache-duration: 1s
+
+logging:
+  level:
+    org.springframework.web: info
+    com.springboot.seed*: debug
+
 # ===================================================================
 # Application specific properties
 #

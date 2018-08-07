@@ -26,11 +26,17 @@ spring:
     # Otherwise, it will be filled in by gradle when building the WAR file
     # Either way, it can be overridden by `--spring.profiles.active` value passed in the commandline or `-Dspring.profiles.active` set in `JAVA_OPTS`
     active: dev
+  messages:
+    always-use-message-format: false
+    basename: i18n/messages
+    encoding: UTF-8
 # ===================================================================
 # Application specific properties
 #
 # Add your own application properties here
 # ===================================================================
 application:
+  language: en # ko, en, ja, fr ...
   property:
     hello: default_hello
+
