@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Arrays;
 
 @RestController
-@RequestMapping("/api/example")
+@RequestMapping("/sample")
 public class SampleProfileController {
 
     @Autowired

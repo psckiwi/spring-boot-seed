@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/example")
+@RequestMapping("/sample")
 public class SampleCacheController {
 
     private static final Logger log = LoggerFactory.getLogger(SampleCacheController.class);
@@ -25,7 +25,7 @@ public class SampleCacheController {
 
         long end = System.currentTimeMillis();
 
-        log.info("ID : " + id + ", Execution Time : " + (end - start) + "ms");
+        log.debug("ID : " + id + ", Execution Time : " + (end - start) + "ms");
 
         return cacheData;
     }
