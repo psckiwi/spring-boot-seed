@@ -4,7 +4,7 @@
 # This configuration overrides the application.yml file.
 # ===================================================================
 server:
-  port: 8080
+  port: 9090
 
 management:
   endpoints:
@@ -26,8 +26,7 @@ spring:
 
 logging:
   level:
-    org.springframework.web: info
-    com.springboot.seed*: debug
+    com.springboot.seed: debug
 
 # ===================================================================
 # Application specific properties
