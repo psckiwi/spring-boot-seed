@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.core.env.Environment;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.annotation.PostConstruct;
 import java.net.InetAddress;
@@ -17,6 +18,7 @@ import java.util.Collection;
 
 @SpringBootApplication
 @EnableCaching
+@EnableScheduling
 public class SpringBootSeedApplication {
 
     private static final Logger log = LoggerFactory.getLogger(SpringBootSeedApplication.class);
@@ -40,7 +42,7 @@ public class SpringBootSeedApplication {
             log.error("You have misconfigured your application! It should not run with both the 'test' and 'prod' profiles at the same time.");
         }
     }
-    
+
     public static void main(String[] args) throws UnknownHostException {
         SpringApplication app = new SpringApplication(SpringBootSeedApplication.class);
         Environment env = app.run(args).getEnvironment();
