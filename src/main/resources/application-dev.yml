@@ -23,11 +23,31 @@ spring:
       enabled: always
   messages:
     cache-duration: 1s
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username:
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    database: H2
+    show-sql: true
+    properties:
+      hibernate.id.new_generator_mappings: true
+      hibernate.cache.use_second_level_cache: true
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: true
+    hibernate:
+          ddl-auto: create
 
 logging:
   level:
+    root: info
     com.springboot.seed: debug
-
 # ===================================================================
 # Application specific properties
 #
