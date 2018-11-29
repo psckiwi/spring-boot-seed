@@ -1,0 +1,11 @@
+# ===================================================================
+# Spring Boot configuration for the "batch" profile.
+#
+# This configuration overrides the application.yml file.
+# ===================================================================
+spring:
+  profiles:
+    active: dev
+
+application:
+  isBatchServer: true

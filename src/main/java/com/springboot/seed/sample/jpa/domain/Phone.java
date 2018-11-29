@@ -6,8 +6,8 @@ import javax.persistence.*;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@Entity
 @ToString
+@Entity
 @Table(name = "tb_phone")
 public class Phone {
     @Id
@@ -28,3 +28,4 @@ public class Phone {
         this.number = number;
     }
 }
+

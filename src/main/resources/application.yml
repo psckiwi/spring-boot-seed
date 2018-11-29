@@ -47,6 +47,9 @@ spring:
 # ===================================================================
 application:
   language: fr # ko, en, ja, fr ...
+  isBatchServer: false
   property:
     hello: default_hello
+
+
 
