@@ -1,6 +1,7 @@
 package com.springboot.seed.sample.scheduler.domain;
 
 
+import com.springboot.seed.sample.jpa.domain.AuditingEntity;
 import com.springboot.seed.sample.scheduler.meta.BatchJobDv;
 import com.springboot.seed.sample.scheduler.meta.BatchJobName;
 import lombok.*;
@@ -15,7 +16,7 @@ import java.time.ZonedDateTime;
 @Setter
 @Entity
 @Table(name = "tb_batch_job")
-public class BatchJob {
+public class BatchJob extends AuditingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -49,21 +50,15 @@ public class BatchJob {
 
     @NotNull
     @Size(max = 100)
-    @Column(name = "reg_user_id", length = 100, nullable = false)
-    private String regUserId;
-
-    @Column(name = "reg_dttm")
-    private ZonedDateTime regDttm;
+    @Column(name = "crt_user_id", length = 100, nullable = false)
+    private String crtUserId;
 
     @Size(max = 100)
-    @Column(name = "modf_user_id", length = 100)
-    private String modfUserId;
-
-    @Column(name = "modf_dttm")
-    private ZonedDateTime modfDttm;
+    @Column(name = "mod_user_id", length = 100)
+    private String modUserId;
 
     @Builder
-    private BatchJob(BatchJobDv jobDv, BatchJobName jobName, String jobArgs, String jobExecYn, String jobResult, String remark, String regUserId, ZonedDateTime regDttm, String modfUserId, ZonedDateTime modfDttm)
+    private BatchJob(BatchJobDv jobDv, BatchJobName jobName, String jobArgs, String jobExecYn, String jobResult, String remark, String crtUserId, String modUserId)
     {
         this.jobDv = jobDv;
         this.jobName = jobName;
@@ -71,9 +66,7 @@ public class BatchJob {
         this.jobExecYn = jobExecYn;
         this.jobResult = jobResult;
         this.remark = remark;
-        this.regUserId = regUserId;
-        this.regDttm = regDttm;
-        this.modfUserId = modfUserId;
-        this.modfDttm = modfDttm;
+        this.crtUserId = crtUserId;
+        this.modUserId = modUserId;
     }
 }

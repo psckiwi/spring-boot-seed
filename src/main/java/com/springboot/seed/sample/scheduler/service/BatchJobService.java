@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.ZonedDateTime;
 import java.util.List;
 
 @Service
@@ -28,8 +27,7 @@ public class BatchJobService {
             .jobName(jobName)
             .jobArgs(jobArgs)
             .jobExecYn(BatchJobConstants.JOB_EXEC_YN_NO)
-            .regUserId(BatchJobConstants.BATCH_USER)
-            .regDttm(ZonedDateTime.now())
+            .crtUserId(BatchJobConstants.BATCH_USER)
             .build();
 
         return batchJobRepository.save(job);
@@ -43,8 +41,7 @@ public class BatchJobService {
             job.setJobExecYn(jobExecYn);
             job.setJobResult(jobResult);
             job.setRemark(remark);
-            job.setModfUserId(BatchJobConstants.BATCH_USER);
-            job.setModfDttm(ZonedDateTime.now());
+            job.setModUserId(BatchJobConstants.BATCH_USER);
         }
 
         return job;

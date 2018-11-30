@@ -26,6 +26,16 @@ public class TeamService {
             .build());
     }
 
+    public Team updateTeamName(TeamDto teamDto) {
+        Team team = teamRepository.findById(teamDto.getId()).orElse(null);
+
+        if (team != null) {
+            team.setTeamName(teamDto.getTeamName());
+        }
+
+        return team;
+    }
+
     public List<Team> findAll() {
         return teamRepository.findAll();
     }

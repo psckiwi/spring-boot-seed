@@ -11,7 +11,7 @@ import java.util.Collection;
 @Setter
 @NoArgsConstructor
 public class TeamDto {
-    private String id;
+    private Long id;
     private String teamName;
     private Collection<Member> members;
 }

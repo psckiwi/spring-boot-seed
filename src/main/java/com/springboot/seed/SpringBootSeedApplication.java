@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.ApplicationPidFileWriter;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.annotation.PostConstruct;
@@ -20,6 +21,7 @@ import java.util.Collection;
 @SpringBootApplication
 @EnableCaching
 @EnableScheduling
+@EnableJpaAuditing
 public class SpringBootSeedApplication {
 
     private static final Logger log = LoggerFactory.getLogger(SpringBootSeedApplication.class);

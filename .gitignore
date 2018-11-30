@@ -27,3 +27,5 @@
 
 ### Log ###
 /logs
+
+application.pid

@@ -9,7 +9,7 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "tb_phone")
-public class Phone {
+public class Phone extends AuditingEntity {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

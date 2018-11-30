@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 @ToString
 @Entity
 @Table(name = "tb_member")
-public class Member {
+public class Member extends AuditingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

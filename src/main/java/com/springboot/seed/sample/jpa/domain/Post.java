@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @Table(name = "tb_post")
-public class Post {
+public class Post extends AuditingEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -52,6 +52,9 @@ public class SampleJpaController {
         return teamService.save(teamDto);
     }
 
+    @PutMapping("/jpa/team/{")
+    public Team updateTeamName(@RequestBody TeamDto teamDto) { return teamService.updateTeamName(teamDto); }
+
     @GetMapping("/jpa/teams")
     public List<Team> findAllTeam() {
         return teamService.findAll();

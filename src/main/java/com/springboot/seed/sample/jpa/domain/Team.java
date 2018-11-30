@@ -15,7 +15,7 @@ import java.util.Collection;
 @Getter
 @Entity
 @Table(name = "tb_team")
-public class Team {
+public class Team extends AuditingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,6 +28,10 @@ public class Team {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn( name = "team_id")
     private Collection<Member> members;
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
 
     @Builder
     private Team(String teamName)
