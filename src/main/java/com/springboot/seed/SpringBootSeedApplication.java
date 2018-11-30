@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.ApplicationPidFileWriter;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.core.env.Environment;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -45,6 +46,7 @@ public class SpringBootSeedApplication {
 
     public static void main(String[] args) throws UnknownHostException {
         SpringApplication app = new SpringApplication(SpringBootSeedApplication.class);
+        app.addListeners(new ApplicationPidFileWriter("./application.pid"));
         Environment env = app.run(args).getEnvironment();
         String protocol = "http";
 
