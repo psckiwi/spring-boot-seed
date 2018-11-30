@@ -5,6 +5,7 @@
 # for example application-dev.yml if you use the "dev" profile.
 # ===================================================================
 server:
+  port: 8080
   servlet:
     session:
       cookie:
